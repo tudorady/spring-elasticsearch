@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.simfony.mobility",
+      "nativeLanguage": "ro"
+    },
+    "jhipsterVersion": "5.3.1",
+    "applicationType": "monolith",
+    "baseName": "es_2",
+    "packageName": "com.simfony.mobility",
+    "packageFolder": "com/simfony/mobility",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "OGE1YmY4ZTYyMjhjZjIwNzhjYzY3ZTA2NWU2NDU1OWFiMzFmZDViZDMyZTRkNTgzNTQxMjhkYzY4ZWQyNjQ1OGFkYzMzOGFjNWMxMWEzMzk2NzBmMDRmZmUzNDI5Zjg2ODc1ZjVhY2JkN2JlNDJhOTEyMDllNWRhOGIxNWJlZDY=",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-audit-helper",
+        "version": "1.0.3"
+      }
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "ro",
+    "languages": [
+      "ro"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+version: '2'
+services:
+    es_2-app:
+        image: es_2
+        environment:
+            # - _JAVA_OPTIONS=-Xmx512m -Xms256m
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:mysql://es_2-mysql:3306/es_2?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=30 # gives time for the JHipster Registry to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=es_2-elasticsearch:9300
+        ports:
+            - 8080:8080
+    es_2-mysql:
+        extends:
+            file: mysql.yml
+            service: es_2-mysql
+    es_2-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: es_2-elasticsearch
+    jhipster-registry:
+        extends:
+            file: jhipster-registry.yml
+            service: jhipster-registry
+        environment:
+            - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_TYPE=native
+            - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_SEARCH_LOCATIONS=file:./central-config/docker-config/
