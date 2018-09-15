@@ -1,0 +1,29 @@
+
+{
+    "es2App": {
+        "subscriber" : {
+            "home": {
+                "title": "Subscribers",
+                "createLabel": "Creeare o nouă entitate Subscriber",
+                "createOrEditLabel": "Creeare sau editare Subscriber",
+                "search": "Căutare după Subscriber"
+            },
+            "created": "A fost creată o nouă entitate Subscriber cu identificatorul {{ param }}",
+            "updated": "Subscriber cu identificatorul {{ param }} a fost actualizată",
+            "deleted": "Subscriber cu identificatorul {{ param }} a fost ștearsă",
+            "delete": {
+                "question": "Sunteți sigur că doriți să ștergeți Subscriber {{ id }}?"
+            },
+            "detail": {
+                "title": "Subscriber"
+            },
+            "imsi": "Imsi",
+            "msisdn": "Msisdn",
+            "nam": "Nam",
+            "state": "State",
+            "category": "Category",
+            "subscriberChargingCharacteristics": "Subscriber Charging Characteristics",
+            "iccid": "Iccid"
+        }
+    }
+}

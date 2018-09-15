@@ -1,0 +1,169 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-subscriber-heading" jhiTranslate="es2App.subscriber.home.createOrEditLabel">Create or edit a Subscriber</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!subscriber.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="subscriber.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="es2App.subscriber.imsi" for="field_imsi">Imsi</label>
+                    <input type="text" class="form-control" name="imsi" id="field_imsi"
+                        [(ngModel)]="subscriber.imsi" required minlength="15" maxlength="15"/>
+                    <div [hidden]="!(editForm.controls.imsi?.dirty && editForm.controls.imsi?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.imsi?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.imsi?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 15 }">
+                        This field is required to be at least 15 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.imsi?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 15 }">
+                        This field cannot be longer than 15 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="es2App.subscriber.msisdn" for="field_msisdn">Msisdn</label>
+                    <input type="text" class="form-control" name="msisdn" id="field_msisdn"
+                        [(ngModel)]="subscriber.msisdn" required minlength="15" maxlength="15"/>
+                    <div [hidden]="!(editForm.controls.msisdn?.dirty && editForm.controls.msisdn?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.msisdn?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.msisdn?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 15 }">
+                        This field is required to be at least 15 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.msisdn?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 15 }">
+                        This field cannot be longer than 15 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="es2App.subscriber.nam" for="field_nam">Nam</label>
+                    <input type="number" class="form-control" name="nam" id="field_nam"
+                        [(ngModel)]="subscriber.nam" required min="0" jhiMin="0" max="2" jhiMax="2"/>
+                    <div [hidden]="!(editForm.controls.nam?.dirty && editForm.controls.nam?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nam?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.nam?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.nam?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 2 }">
+                            This field cannot be more than 2.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.nam?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="es2App.subscriber.state" for="field_state">State</label>
+                    <input type="number" class="form-control" name="state" id="field_state"
+                        [(ngModel)]="subscriber.state" required min="1" jhiMin="1" max="1" jhiMax="1"/>
+                    <div [hidden]="!(editForm.controls.state?.dirty && editForm.controls.state?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.state?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.state?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 1 }">
+                            This field should be at least 1.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.state?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 1 }">
+                            This field cannot be more than 1.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.state?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="es2App.subscriber.category" for="field_category">Category</label>
+                    <input type="number" class="form-control" name="category" id="field_category"
+                        [(ngModel)]="subscriber.category" required min="10" jhiMin="10" max="10" jhiMax="10"/>
+                    <div [hidden]="!(editForm.controls.category?.dirty && editForm.controls.category?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.category?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.category?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 10 }">
+                            This field should be at least 10.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.category?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 10 }">
+                            This field cannot be more than 10.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.category?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="es2App.subscriber.subscriberChargingCharacteristics" for="field_subscriberChargingCharacteristics">Subscriber Charging Characteristics</label>
+                    <input type="number" class="form-control" name="subscriberChargingCharacteristics" id="field_subscriberChargingCharacteristics"
+                        [(ngModel)]="subscriber.subscriberChargingCharacteristics" required min="4" jhiMin="4"/>
+                    <div [hidden]="!(editForm.controls.subscriberChargingCharacteristics?.dirty && editForm.controls.subscriberChargingCharacteristics?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.subscriberChargingCharacteristics?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.subscriberChargingCharacteristics?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 4 }">
+                            This field should be at least 4.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.subscriberChargingCharacteristics?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="es2App.subscriber.iccid" for="field_iccid">Iccid</label>
+                    <input type="text" class="form-control" name="iccid" id="field_iccid"
+                        [(ngModel)]="subscriber.iccid" required minlength="19" maxlength="19"/>
+                    <div [hidden]="!(editForm.controls.iccid?.dirty && editForm.controls.iccid?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iccid?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iccid?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 19 }">
+                        This field is required to be at least 19 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iccid?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 19 }">
+                        This field cannot be longer than 19 characters.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

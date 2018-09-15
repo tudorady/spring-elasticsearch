@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="subscriber">
+            <h2><span jhiTranslate="es2App.subscriber.detail.title">Subscriber</span> {{subscriber.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="es2App.subscriber.imsi">Imsi</span></dt>
+                <dd>
+                    <span>{{subscriber.imsi}}</span>
+                </dd>
+                <dt><span jhiTranslate="es2App.subscriber.msisdn">Msisdn</span></dt>
+                <dd>
+                    <span>{{subscriber.msisdn}}</span>
+                </dd>
+                <dt><span jhiTranslate="es2App.subscriber.nam">Nam</span></dt>
+                <dd>
+                    <span>{{subscriber.nam}}</span>
+                </dd>
+                <dt><span jhiTranslate="es2App.subscriber.state">State</span></dt>
+                <dd>
+                    <span>{{subscriber.state}}</span>
+                </dd>
+                <dt><span jhiTranslate="es2App.subscriber.category">Category</span></dt>
+                <dd>
+                    <span>{{subscriber.category}}</span>
+                </dd>
+                <dt><span jhiTranslate="es2App.subscriber.subscriberChargingCharacteristics">Subscriber Charging Characteristics</span></dt>
+                <dd>
+                    <span>{{subscriber.subscriberChargingCharacteristics}}</span>
+                </dd>
+                <dt><span jhiTranslate="es2App.subscriber.iccid">Iccid</span></dt>
+                <dd>
+                    <span>{{subscriber.iccid}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/subscriber', subscriber.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

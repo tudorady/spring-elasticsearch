@@ -1,0 +1,89 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "imsi",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "15",
+            "fieldValidateRulesMaxlength": "15"
+        },
+        {
+            "fieldName": "msisdn",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "15",
+            "fieldValidateRulesMaxlength": "15"
+        },
+        {
+            "fieldName": "nam",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": "0",
+            "fieldValidateRulesMax": "2"
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": "1",
+            "fieldValidateRulesMax": "1"
+        },
+        {
+            "fieldName": "category",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": "10",
+            "fieldValidateRulesMax": "10"
+        },
+        {
+            "fieldName": "subscriberChargingCharacteristics",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": "4"
+        },
+        {
+            "fieldName": "iccid",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "19",
+            "fieldValidateRulesMaxlength": "19"
+        }
+    ],
+    "changelogDate": "20180914084621",
+    "dto": "mapstruct",
+    "searchEngine":"elasticsearch",
+    "service": "serviceClass",
+    "entityTableName": "subscriber",
+    "jpaMetamodelFiltering": true,
+    "pagination": "pagination"
+}
