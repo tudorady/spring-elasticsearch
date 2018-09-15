@@ -10,6 +10,7 @@
                 "bankAccount": "ContBancar",
                 "label": "Etichetă",
                 "operation": "Operație",
+                "subscriber": "Subscriber",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -32,6 +33,7 @@
                 "audits": "Audit",
                 "apidocs": "API",
                 "database": "Bază de date",
+                "elasticsearch-reindex": "Reindex Elasticsearch",
                 "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
             },
             "services":{

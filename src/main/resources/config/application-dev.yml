@@ -40,9 +40,9 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost:3306/es_2?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://localhost:3306/elasticsearch?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
-        password:
+        password: admin
         hikari:
             auto-commit: false
             data-source-properties:
@@ -60,11 +60,11 @@ spring:
             hibernate.cache.use_second_level_cache: false
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
-    data:
-        elasticsearch:
-            properties:
-                path:
-                    home: target/elasticsearch
+#    data:
+#        elasticsearch:
+#            properties:
+#                path:
+#                    home: target/elasticsearch
     liquibase:
         contexts: dev
     mail:

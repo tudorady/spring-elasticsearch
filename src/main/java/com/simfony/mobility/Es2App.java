@@ -1,5 +1,6 @@
 package com.simfony.mobility;
 
+import com.github.vanroy.springboot.autoconfigure.data.jest.ElasticsearchJestAutoConfiguration;
 import com.simfony.mobility.config.ApplicationProperties;
 import com.simfony.mobility.config.DefaultProfileUtil;
 
@@ -9,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchAutoConfiguration;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -19,7 +21,7 @@ import java.net.InetAddress;
 import java.util.Arrays;
 import java.util.Collection;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {ElasticsearchJestAutoConfiguration.class})
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
 @EnableDiscoveryClient
 public class Es2App {
